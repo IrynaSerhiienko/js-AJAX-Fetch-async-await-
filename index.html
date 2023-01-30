@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link rel="stylesheet" href="./src/style/css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <!-- <div class="container"> -->
+        <!-- <div class="logo-holder">
+          <a href="#" class="logo-link" target="_blank"><img src="./src/img/logo.png" alt="logo"></a>
+        </div> -->
+        <div class="themetoggle-holder">
+          <a href="#" class="themetoggle">
+            <!-- Toggle theme -->
+            <span class="material-symbols-outlined"></span>
+            <!-- <div class="theme-toggle__item"></div> -->
+          </a>
+        </div>
+        <!-- </div> -->
+      </header>
+      <main class="main">
+        <div class="hero-container"></div>
+        <div class="container">
+          <div class="search-wrapper">
+            <label for="search">Search Characters</label>
+            <input type="search" id="search" autocomplete="off" data-search />
+          </div>
+          <nav class="nav">
+            <div class="box">
+              <select class="select1" name="" id="select-category">
+                <option value="all">all</option>
+              </select>
+            </div>
+          </nav>
+          <section class="movie">
+            <!-- <div class="movie__container"></div> -->
+            <div class="user-cards"></div>
+          </section>
+          <div class="page-navigation">
+            <ul>
+              <li class="previous">
+                <a href="#"><i class="fa-solid fa-circle-chevron-left"></i></a>
+              </li>
+              <li class="current">
+                <a href="#"><span></span>Current page</a>
+              </li>
+              <li class="next">
+                <a href="#"><i class="fa-solid fa-circle-chevron-right"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container"></div>
+      </footer>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/9d108dab0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/dark-light_mode.js"></script>
+  </body>
+</html>
