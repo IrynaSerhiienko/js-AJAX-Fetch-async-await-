@@ -20,23 +20,58 @@
 
 input {
   font-size: 1rem;
+//   background-color: $light-gray;
   background-color: $light-gray;
   border-radius: 5px;
-  padding: 15px ;
+  padding: 15px;
 }
 
-.user-cards {
+// .user-cards {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+//   gap: 0.6rem;
+//   margin-top: 1rem;
+// }
+
+.movie__container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 0.6rem;
   margin-top: 1rem;
 }
 
-.card {
-  border: 1px solid black;
-  background-color: #22985e;
-  border-radius: 10px;
-  padding: 0.5rem;
+.movie__item {
+// .card {
+  padding: 16px;
+  border: 1px solid;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  //   border: 1px solid black;
+  //   background-color: #22985e;
+    border-radius: 3px;
+  //   padding: 0.5rem;
+}
+
+.movie__name {
+  font-size: 18px;
+}
+
+.movie__dead {
+    background-color: rgb(188, 178, 178, 0.7);
+}
+
+.alive{
+    background-color: rgb(58, 216, 139, 0.7);
+}
+
+.movie__data {
+  font-size: 12px;
+}
+
+.movie__img {
+  display: block;
+  width: 100%;
 }
 
 // .card > .header {

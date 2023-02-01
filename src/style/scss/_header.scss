@@ -1,0 +1,17 @@
+.logo-holder {
+  display: flex;
+  @include size(170px, 60px);
+  //   background: rgba(24, 181, 164, 0.5);
+  img {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    // background: transparent;
+    // background: rgba(24, 181, 164, 0.5);
+  }
+  //   background-image: url(../../img/25-258834_rick-and-morty-logo-and-image-rick-and.png);
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  //   z-index: 100;
+  //   background-position: 50% 40%;
+}

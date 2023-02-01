@@ -2,16 +2,17 @@
 // Серії https://rickandmortyapi.com/api/episode/2
 // https://rickandmortyapi.com/api/character/826`
 (async function () {
+  //const out = document.querySelector(".user-cards");
+  //const input = document.querySelector("#search");
+
   const api = "https://rickandmortyapi.com/api/character?page=1";
 
-  //   const out = document.querySelector(".movie__container");
-  const out = document.querySelector(".user-cards");
+  const out = document.querySelector(".movie__container");
   const selectCategory = document.querySelector("#select-category");
   const searchInput = document.querySelector("[data-search]");
   const previousPage = document.querySelector(".previous");
   const currentPage = document.querySelector(".current");
   const nextPage = document.querySelector(".next");
-  //   const input = document.querySelector("#search");
 
   getCharacters(api);
 
@@ -21,7 +22,7 @@
       const respData = await response.json();
       console.log(respData);
       renderCharacters(respData);
-      //   renderCharacters(respData.results);
+      //renderCharacters(respData.results);
     } catch (error) {
       console.log(error);
     }
@@ -36,14 +37,19 @@
       let newCharacter = createItem(item);
       out.append(newCharacter);
       select.push(item.species);
+      //   console.log(select);
     });
 
     let select2 = new Set(select); //delete repeated values from select
+    selectCategory.innerHTML = "";
+    selectCategory.innerHTML = `<option value="all">All</option>`;
 
     select2.forEach((item) => {
       selectCategory.innerHTML += `
              <option value="${item}">${item}</option>
             `;
+      //   console.log(select2);
+      //   console.log(selectCategory.innerHTML);
     });
 
     selectCategory.addEventListener("change", () => {
@@ -68,13 +74,15 @@
     });
 
     previousPage.addEventListener("click", (e) => {
-    //   selectCategory.innerHTML = "";
+      //   selectCategory.innerHTML = "";
+      e.preventDefault();
       out.innerHTML = "";
       getCharacters(characters.info.prev);
     });
 
     nextPage.addEventListener("click", (e) => {
-    //   selectCategory.innerHTML = "";
+      //   selectCategory.innerHTML = "";
+      e.preventDefault();
       out.innerHTML = "";
       getCharacters(characters.info.next);
     });
@@ -107,28 +115,36 @@
     let name = document.createElement("h2");
     let img = document.createElement("img");
     let gen = document.createElement("div");
-    let alive = document.createElement("div");
+    let status = document.createElement("div");
+    // let alive = document.createElement("div");
     let species = document.createElement("div");
     let data = document.createElement("div");
 
-    // item.classList.add("movie__item");
-    item.classList.add("card");
+    item.classList.add("movie__item");
+    // item.classList.add("card");
     name.classList.add("movie__name");
+    // name.classList.add("neon-text");
     img.classList.add("movie__img");
     gen.classList.add("movie__gen");
-    alive.classList.add("movie__alive");
+    status.classList.add("movie__alive");
+    // alive.classList.add("movie__alive");
     species.classList.add("movie__species");
     data.classList.add("movie__data");
 
-    name.innerHTML = character.name;
+    name.innerHTML = ` <b>${character.name} </b>`;
     gen.innerHTML = `Стать: <b> ${character.gender} </b>`;
     // якщо мертвий закрашувати в сірий
-    alive.innerHTML = `Стан здоровя: <b> ${character.status} </b>`;
+    status.innerHTML = `Стан здоровя: <b> ${character.status} </b>`;
+    // alive.innerHTML = `Стан здоровя: <b> ${character.status} </b>`;
     species.innerHTML = `Вид: <b> ${character.species} </b>`;
     data.innerHTML = `Дата народження: <i> ${character.created} </i>`;
     img.src = character.image;
 
-    item.append(name, img, gen, alive, species, data);
+    if (character.status === "Dead") {
+      item.classList.add("movie__dead");
+    } else item.classList.add("alive");
+
+    item.append(name, img, gen, status, species, data);
 
     return item;
   }

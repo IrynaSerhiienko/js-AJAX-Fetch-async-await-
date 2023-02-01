@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  justify-content: end;
+//   justify-content: end;
 }
 
 .dark {
@@ -15,4 +15,11 @@
 a {
   color: $dark;
   /* text-decoration: none; */
+}
+
+.neon-text {
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #0fa,
+    0 0 20px #0fa, 0 0 30px #0fa, 0 0 55px #0fa, 0 0 80px #0fa;
 }

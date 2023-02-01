@@ -5,18 +5,24 @@ body {
 .wrapper {
   min-height: 100%;
   overflow: hidden;
+  //   background-image: url(../../img/23-236105_popsocket-rick-and-morty.png);
+  //   background-size: 100px 100px;
 }
 
 .header {
-  //   background-color: $light-violet;
+  // background-color: #383738;
+  // background-color: #490085;
+  // background-color: $light-violet;
+  //   background-color: rgb(58, 216, 139, 0.7);;
   background-color: $light-green;
   @extend %flex;
   position: fixed;
   width: 100%;
   left: 0;
   top: 0;
-  padding: 30px;
+  padding: 15px;
   z-index: 50;
+  justify-content: space-between;
 }
 
 .main {
